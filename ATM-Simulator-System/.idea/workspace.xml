@@ -5,20 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2c557716-19a2-41cf-98a4-c055d72b7d16" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/atm/Login.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/atm/Signup.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.gitattributes" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../.vscode/settings.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Login.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Singup.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/icons/a.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/icons/atm.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/icons/logo.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../ATM/qodana.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AYM-Simulator-System/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AYM-Simulator-System/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AYM-Simulator-System/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AYM-Simulator-System/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AYM-Simulator-System/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AYM-Simulator-System/src/main/java/atm/Login.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AYM-Simulator-System/src/main/java/atm/Singup.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../app/build.gradle" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../app/src/main/java/org/example/App.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../app/src/main/java/org/example/Login.java" beforeDir="false" />

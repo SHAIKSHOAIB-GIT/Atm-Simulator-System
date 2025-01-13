@@ -1,34 +1,35 @@
-package org.example;
+package atm;
 
 import java.awt.*;
-import java.awt.event.*;
 import javax.swing.*;
-//import com.toedter.calendar.JDateChooser;
+//import java.sql.*;
+import com.toedter.calendar.JDateChooser;
+import java.awt.event.ActionListener;
 import java.util.*;
 
-public class Singup extends JFrame implements ActionListener{
+public class Signup extends JFrame implements ActionListener {
 
     JLabel l1,l2,l3,l4,l5,l6,l7,l8,l9,l10,l11,l12,l13,l14,l15;
     JTextField t1,t2,t3,t4,t5,t6,t7;
     JRadioButton r1,r2,r3,r4,r5;
     JButton b;
-//    JDateChooser dateChooser;
+    JDateChooser dateChooser;
 
 
     Random ran = new Random();
     long first4 = (ran.nextLong() % 9000L) + 1000L;
     String first = "" + Math.abs(first4);
 
-    Singup(){
+    Signup(){
 
         setTitle("NEW ACCOUNT APPLICATION FORM");
-//
-//        ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("org/example/icons/logo.jpg"));
-//        Image i2 = i1.getImage().getScaledInstance(100, 100, Image.SCALE_DEFAULT);
-//        ImageIcon i3 = new ImageIcon(i2);
-//        JLabel l11 = new JLabel(i3);
-//        l11.setBounds(20, 0, 100, 100);
-//        add(l11);
+
+        ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("icons/bank.jpg"));
+        Image i2 = i1.getImage().getScaledInstance(100, 100, Image.SCALE_DEFAULT);
+        ImageIcon i3 = new ImageIcon(i2);
+        JLabel l11 = new JLabel(i3);
+        l11.setBounds(20, 0, 100, 100);
+        add(l11);
 
         l1 = new JLabel("APPLICATION FORM NO. "+first);
         l1.setFont(new Font("Raleway", Font.BOLD, 38));
@@ -133,11 +134,11 @@ public class Singup extends JFrame implements ActionListener{
         groupstatus.add(r4);
         groupstatus.add(r5);
 
-//        dateChooser = new JDateChooser();
-//        //dateChooser.setBorder(new LineBorder(new Color(0, 0, 0), 1, true));
-//        dateChooser.setForeground(new Color(105, 105, 105));
-//        dateChooser.setBounds(137, 337, 200, 29);
-//        add(dateChooser);
+        dateChooser = new JDateChooser();
+        //dateChooser.setBorder(new LineBorder(new Color(0, 0, 0), 1, true));
+        dateChooser.setForeground(new Color(105, 105, 105));
+        dateChooser.setBounds(137, 337, 200, 29);
+        add(dateChooser);
 
         setLayout(null);
         l1.setBounds(140,20,600,40);
@@ -161,7 +162,7 @@ public class Singup extends JFrame implements ActionListener{
         l5.setBounds(100,240,200,30);
         add(l5);
 
-//        dateChooser.setBounds(300, 240, 400, 30);
+       dateChooser.setBounds(300, 240, 400, 30);
 
         l6.setBounds(100,290,200,30);
         add(l6);
@@ -224,7 +225,7 @@ public class Singup extends JFrame implements ActionListener{
         getContentPane().setBackground(Color.WHITE);
 
         setSize(850,800);
-        setLocation(300,10);
+        setLocation(200,0);
         setVisible(true);
     }
 
@@ -233,7 +234,7 @@ public class Singup extends JFrame implements ActionListener{
         String formno = first;
         String name = t1.getText();
         String fname = t2.getText();
-//        String dob = ((JTextField) dateChooser.getDateEditor().getUiComponent()).getText();
+        String dob = ((JTextField) dateChooser.getDateEditor().getUiComponent()).getText();
         String gender = null;
         if(r1.isSelected()){
             gender = "Male";
@@ -257,28 +258,28 @@ public class Singup extends JFrame implements ActionListener{
         String state = t7.getText();
 
 
-//        try{
-//
-//            if(t6.getText().equals("")){
-//                JOptionPane.showMessageDialog(null, "Fill all the required fields");
-//            }else{
-//                Conn c1 = new Conn();
-//                String q1 = "insert into signup values('"+formno+"','"+name+"','"+fname+"','"+dob+"','"+gender+"','"+email+"','"+marital+"','"+address+"','"+city+"','"+pincode+"','"+state+"')";
-//                c1.s.executeUpdate(q1);
-//
-//                new Signup2(first).setVisible(true);
-//                setVisible(false);
-//            }
-//
-//        }catch(Exception e){
-//            e.printStackTrace();
-//        }
+        try{
+
+            if(t6.getText().equals("")){
+                JOptionPane.showMessageDialog(null, "Fill all the required fields");
+            }else{
+                Conn c1 = new Conn();
+                String q1 = "insert into signup values('"+formno+"','"+name+"','"+fname+"','"+dob+"','"+gender+"','"+email+"','"+marital+"','"+address+"','"+city+"','"+pincode+"','"+state+"')";
+                c1.s.executeUpdate(q1);
+
+                new Signup2(first).setVisible(true);
+                setVisible(false);
+            }
+
+        }catch(Exception e){
+            e.printStackTrace();
+        }
 
     }
 
 
     public static void main(String[] args){
-        new Singup().setVisible(true);
+        new Signup().setVisible(true);
     }
 }
 

@@ -1,10 +1,11 @@
-package org.example;
+package atm;
 
 import java.awt.*;
-import java.awt.event.*;
+//import java.awt.event.*;
 import javax.swing.*;
+//import java.sql.*;
 
-public class Login extends JFrame implements ActionListener{
+public class Login extends JFrame{
     JLabel l1,l2,l3;
     JTextField tf1;
     JPasswordField pf2;
@@ -13,12 +14,12 @@ public class Login extends JFrame implements ActionListener{
     Login(){
         setTitle("AUTOMATED TELLER MACHINE");
 
-//        ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("/org/example/icons/logo.jpg"));
-//        Image i2 = i1.getImage().getScaledInstance(100, 100, Image.SCALE_DEFAULT);
-//        ImageIcon i3 = new ImageIcon(i2);
-//        JLabel l11 = new JLabel(i3);
-//        l11.setBounds(70, 10, 100, 100);
-//        add(l11);
+        ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("icons/bank.jpg"));
+        Image i2 = i1.getImage().getScaledInstance(100, 100, Image.SCALE_DEFAULT);
+        ImageIcon i3 = new ImageIcon(i2);
+        JLabel l11 = new JLabel(i3);
+        l11.setBounds(70, 10, 100, 100);
+        add(l11);
 
         l1 = new JLabel("WELCOME TO ATM");
         l1.setFont(new Font("Osward", Font.BOLD, 38));
@@ -71,9 +72,9 @@ public class Login extends JFrame implements ActionListener{
         b3.setBounds(300,350,230,30);
         add(b3);
 
-        b1.addActionListener(this);
-        b2.addActionListener(this);
-        b3.addActionListener(this);
+//        b1.addActionListener(this);
+//        b2.addActionListener(this);
+//        b3.addActionListener(this);
 
         getContentPane().setBackground(Color.WHITE);
 
@@ -82,7 +83,7 @@ public class Login extends JFrame implements ActionListener{
         setVisible(true);
 
     }
-    public void actionPerformed(ActionEvent ae){
+//    public void actionPerformed(ActionEvent ae){
 //        try{
 //            if(ae.getSource()==b1){
 //                Conn c1 = new Conn();
@@ -97,18 +98,17 @@ public class Login extends JFrame implements ActionListener{
 //                }else{
 //                    JOptionPane.showMessageDialog(null, "Incorrect Card Number or PIN");
 //                }
-//            }
-             if(ae.getSource()==b2){
-                tf1.setText("");
-                pf2.setText("");
-            }else if(ae.getSource()==b3){
-                setVisible(false);
+//            }else if(ae.getSource()==b2){
+//                tf1.setText("");
+//                pf2.setText("");
+//            }else if(ae.getSource()==b3){
+//                setVisible(false);
 //                new Signup().setVisible(true);
-            }
+//            }
 //        }catch(Exception e){
 //            e.printStackTrace();
 //        }
-   }
+//    }
     public static void main(String[] args){
         new Login().setVisible(true);
     }

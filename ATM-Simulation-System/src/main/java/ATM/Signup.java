@@ -3,9 +3,11 @@ package ATM;
 import java.awt.*;
 import javax.swing.*;
 import com.toedter.calendar.JDateChooser;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.*;
 
-public class Signup extends JFrame {
+public class Signup extends JFrame implements ActionListener {
 
     JLabel l1,l2,l3,l4,l5,l6,l7,l8,l9,l10,l11,l12,l13,l14,l15;
     JTextField t1,t2,t3,t4,t5,t6,t7;
@@ -224,8 +226,7 @@ public class Signup extends JFrame {
         b.setBounds(620,660,80,30);
         mainPanel.add(b);
 
-
-
+        b.addActionListener(this);
         getContentPane().setBackground(Color.WHITE);
         setContentPane(scrollPane);
         setSize(850,800);
@@ -233,7 +234,52 @@ public class Signup extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(true);
     }
+    public void actionPerformed(ActionEvent ae){
 
+        String formno = first;
+        String name = t1.getText();
+        String fname = t2.getText();
+        String dob = ((JTextField) dateChooser.getDateEditor().getUiComponent()).getText();
+        String gender = null;
+        if(r1.isSelected()){
+            gender = "Male";
+        }else if(r2.isSelected()){
+            gender = "Female";
+        }
+
+        String email = t3.getText();
+        String marital = null;
+        if(r3.isSelected()){
+            marital = "Married";
+        }else if(r4.isSelected()){
+            marital = "Unmarried";
+        }else if(r5.isSelected()){
+            marital = "Other";
+        }
+
+        String address = t4.getText();
+        String city = t5.getText();
+        String pincode = t6.getText();
+        String state = t7.getText();
+
+
+        try{
+
+            if(t6.getText().equals("")){
+                JOptionPane.showMessageDialog(null, "Fill all the required fields");
+            }else{
+                Conn c1 = new Conn();
+//                String q1 = "insert into signup values('"+formno+"','"+name+"','"+fname+"','"+dob+"','"+gender+"','"+email+"','"+marital+"','"+address+"','"+city+"','"+pincode+"','"+state+"')";
+                String q1 = "INSERT INTO signup (formno, name, father_name, dob, gender, email, martial, address, city, pincode, state) VALUES ('"+formno+"', '"+name+"', '"+fname+"', '"+dob+"', '"+gender+"', '"+email+"', '"+marital+"', '"+address+"', '"+city+"', '"+pincode+"', '"+state+"')";
+                c1.s.executeUpdate(q1);
+
+            }
+
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+
+    }
 
 
     public static void main(String[] args){

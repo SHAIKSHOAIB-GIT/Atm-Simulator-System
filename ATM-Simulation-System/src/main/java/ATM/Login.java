@@ -73,6 +73,7 @@ public class Login extends JFrame implements ActionListener {
         add(b3);
 
 
+
         getContentPane().setBackground(Color.WHITE);
 
         setSize(800,480);
@@ -81,8 +82,9 @@ public class Login extends JFrame implements ActionListener {
 
     }
 
-    public void actionPerformed(ActionEvent ae) {
-    }
+  public void actionPerformed(ActionEvent ae) {
+
+   }
 
     public static void main(String[] args){
         new Login().setVisible(true);

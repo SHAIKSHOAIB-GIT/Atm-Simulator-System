@@ -18,7 +18,7 @@ public class Signup extends JFrame implements ActionListener {
 
     Random ran = new Random();
     long first4 = (ran.nextLong() % 9000L) + 1000L;
-    String first = "" + Math.abs(first4);
+    String formno = "" + Math.abs(first4);
 
     Signup(){
 
@@ -37,7 +37,7 @@ public class Signup extends JFrame implements ActionListener {
         scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
         mainPanel.setPreferredSize(new Dimension(850, 800));
 
-        l1 = new JLabel("APPLICATION FORM NO. "+first);
+        l1 = new JLabel("APPLICATION FORM NO. "+ formno);
         l1.setFont(new Font("Raleway", Font.BOLD, 38));
 
         l2 = new JLabel("Page 1: Personal Details");
@@ -227,6 +227,7 @@ public class Signup extends JFrame implements ActionListener {
         mainPanel.add(b);
 
         b.addActionListener(this);
+
         getContentPane().setBackground(Color.WHITE);
         setContentPane(scrollPane);
         setSize(850,800);
@@ -236,7 +237,7 @@ public class Signup extends JFrame implements ActionListener {
     }
     public void actionPerformed(ActionEvent ae){
 
-        String formno = first;
+        String formno = this.formno;
         String name = t1.getText();
         String fname = t2.getText();
         String dob = ((JTextField) dateChooser.getDateEditor().getUiComponent()).getText();
@@ -269,10 +270,10 @@ public class Signup extends JFrame implements ActionListener {
                 JOptionPane.showMessageDialog(null, "Fill all the required fields");
             }else{
                 Conn c1 = new Conn();
-//                String q1 = "insert into signup values('"+formno+"','"+name+"','"+fname+"','"+dob+"','"+gender+"','"+email+"','"+marital+"','"+address+"','"+city+"','"+pincode+"','"+state+"')";
                 String q1 = "INSERT INTO signup (formno, name, father_name, dob, gender, email, martial, address, city, pincode, state) VALUES ('"+formno+"', '"+name+"', '"+fname+"', '"+dob+"', '"+gender+"', '"+email+"', '"+marital+"', '"+address+"', '"+city+"', '"+pincode+"', '"+state+"')";
                 c1.s.executeUpdate(q1);
-
+                new Signup2(formno).setVisible(true);
+                setVisible(false);
             }
 
         }catch(Exception e){

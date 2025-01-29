@@ -241,8 +241,8 @@ public class Signup2 extends JFrame implements ActionListener {
                 String q1 = "insert into signup2 (formno, religion, category, income, education, occupation, pan, aadhar, scitizen, eaccount) VALUES('"+formno+"','"+religion+"','"+category+"','"+income+"','"+education+"','"+occupation+"','"+pan+"','"+aadhar+"','"+scitizen+"','"+eaccount+"')";
                 c1.s.executeUpdate(q1);
 
-//                new Signup3(formno).setVisible(true);
-//                setVisible(false);
+                new Signup3(formno).setVisible(true);
+                setVisible(false);
             }
 
 

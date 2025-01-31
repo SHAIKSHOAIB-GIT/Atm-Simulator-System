@@ -9,7 +9,7 @@ import java.util.*;
 
 public class Signup extends JFrame implements ActionListener {
 
-    JLabel l1,l2,l3,l4,l5,l6,l7,l8,l9,l10,l11,l12,l13,l14,l15;
+    JLabel l1,l2,l3,l4,l5,l6,l7,l8,l9,l10,l12,l13,l14,l15;
     JTextField t1,t2,t3,t4,t5,t6,t7;
     JRadioButton r1,r2,r3,r4,r5;
     JButton b;
@@ -266,7 +266,7 @@ public class Signup extends JFrame implements ActionListener {
 
         try{
 
-            if(t6.getText().equals("")){
+            if(t6.getText().isEmpty()){
                 JOptionPane.showMessageDialog(null, "Fill all the required fields");
             }else{
                 Conn c1 = new Conn();

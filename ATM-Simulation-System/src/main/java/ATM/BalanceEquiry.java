@@ -7,9 +7,8 @@ import javax.swing.*;
 
 class BalanceEnquiry extends JFrame implements ActionListener {
 
-    JTextField t1, t2;
-    JButton b1, b2, b3;
-    JLabel l1, l2, l3;
+    JButton b1;
+    JLabel l1;
     String pin;
 
     BalanceEnquiry(String pin) {
@@ -40,7 +39,7 @@ class BalanceEnquiry extends JFrame implements ActionListener {
             Conn c1 = new Conn();
             ResultSet rs = c1.s.executeQuery("select * from bank where pin = '"+pin+"'");
             while (rs.next()) {
-                if (rs.getString("mode").equals("Deposit")) {
+                if (rs.getString("type").equals("Deposit")) {
                     balance += Integer.parseInt(rs.getString("amount"));
                 } else {
                     balance -= Integer.parseInt(rs.getString("amount"));

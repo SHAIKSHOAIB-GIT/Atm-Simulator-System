@@ -67,15 +67,20 @@ public class Withdrawl extends JFrame implements ActionListener{
             String amount = t1.getText();
             Date date = new Date();
             if(ae.getSource()==b1){
-                if(t1.getText().equals("")){
+                if(t1.getText().isEmpty()){
                     JOptionPane.showMessageDialog(null, "Please enter the Amount to you want to Withdraw");
-                }else{
+                }
+                int check = Integer.parseInt(amount);
+                if (check > 10001) {
+                    JOptionPane.showMessageDialog(null, "Please enter the Amount below or equal to 10,000");
+                }
+                else{
                     Conn c1 = new Conn();
 
                     ResultSet rs = c1.s.executeQuery("select * from bank where pin = '"+pin+"'");
                     int balance = 0;
                     while(rs.next()){
-                        if(rs.getString("mode").equals("Deposit")){
+                        if(rs.getString("type").equals("Deposit")){
                             balance += Integer.parseInt(rs.getString("amount"));
                         }else{
                             balance -= Integer.parseInt(rs.getString("amount"));
@@ -85,6 +90,7 @@ public class Withdrawl extends JFrame implements ActionListener{
                         JOptionPane.showMessageDialog(null, "Insuffient Balance");
                         return;
                     }
+
 
                     c1.s.executeUpdate("insert into bank values('"+pin+"', '"+date+"', 'Withdrawl', '"+amount+"')");
                     JOptionPane.showMessageDialog(null, "Rs. "+amount+" Debited Successfully");

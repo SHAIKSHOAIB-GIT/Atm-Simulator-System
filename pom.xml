@@ -36,7 +36,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>ATM.Signup</mainClass>  <!-- Replace with your main class -->
+                            <mainClass>ATM.Login</mainClass>  <!-- Replace with your main class -->
                         </manifest>
                     </archive>
                 </configuration>

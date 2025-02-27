@@ -9,7 +9,7 @@ import java.util.*;
 
 public class Signup extends JFrame implements ActionListener {
 
-    JLabel l1,l2,l3,l4,l5,l6,l7,l8,l9,l10,l12,l13,l14,l15;
+    JLabel l1,l2,l3,l4,l5,l6,l7,l8,l9,l10,l11,l12,l13,l14,l15;
     JTextField t1,t2,t3,t4,t5,t6,t7;
     JRadioButton r1,r2,r3,r4,r5;
     JButton b;
@@ -22,15 +22,15 @@ public class Signup extends JFrame implements ActionListener {
 
     Signup(){
 
-        setTitle("NEW ACCOUNT APPLICATION FORM");
+        setTitle("NEW ACCOUNT APPLICATION FORM");ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("icons/bank.png"));
+//        Image i2 = i1.getImage().getScaledInstance(100, 100, Image.SCALE_DEFAULT);
+//        ImageIcon i3 = new ImageIcon(i2);
+//        JLabel l11 = new JLabel(i3);
+//        l11.setBounds(20, 0, 100, 100);
+//        add(l11);
 
-        ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("icons/bank.png"));
-        Image i2 = i1.getImage().getScaledInstance(100, 100, Image.SCALE_DEFAULT);
-        ImageIcon i3 = new ImageIcon(i2);
-        JLabel l11 = new JLabel(i3);
-        l11.setBounds(20, 0, 100, 100);
-        add(l11);
 
+//        
         JPanel mainPanel = new JPanel();
         mainPanel.setLayout(null);
         JScrollPane scrollPane = new JScrollPane(mainPanel);

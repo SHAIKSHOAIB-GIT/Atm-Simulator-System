@@ -14,13 +14,13 @@ public class Login extends JFrame implements ActionListener {
 
     Login(){
         setTitle("AUTOMATED TELLER MACHINE");
-
-        ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("icons/bank.png"));
-        Image i2 = i1.getImage().getScaledInstance(100, 100, Image.SCALE_DEFAULT);
-        ImageIcon i3 = new ImageIcon(i2);
-        JLabel l11 = new JLabel(i3);
-        l11.setBounds(70, 10, 100, 100);
-        add(l11);
+//
+//        ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("icons/bank.png"));
+//        Image i2 = i1.getImage().getScaledInstance(100, 100, Image.SCALE_DEFAULT);
+//        ImageIcon i3 = new ImageIcon(i2);
+//        JLabel l11 = new JLabel(i3);
+//        l11.setBounds(70, 10, 100, 100);
+//        add(l11);
 
         l1 = new JLabel("WELCOME TO ATM");
         l1.setFont(new Font("Osward", Font.BOLD, 38));
